@@ -6,7 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @description
- *      演示CopyOnWriteArrayList可以在迭代的过程中修改数组内容，但是ArrayList不行，对比
+ *      演示CopyOnWriteArrayList可以在迭代的过程中修改数组内容, 但是ArrayList不行(对比)
  * @author yufeng
  * @create 2020-03-19
  */
@@ -47,7 +47,6 @@ public class CopyOnWriteArrayListDemo1 {
         }
     }
 
-
     /**
      * 1. CopyOnWriteArrayList支持在迭代的时候进行增删的操作
      * 2. 后面两次迭代输出的内容
@@ -82,7 +81,6 @@ public class CopyOnWriteArrayListDemo1 {
             }
         }
     }
-
 
     public static void main(String[] args) {
         arrayListTest();

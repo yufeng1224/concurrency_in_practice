@@ -9,7 +9,7 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
  *          1. 设计一个类, 想好协作的逻辑, 实现获取/释放方法
  *          2. 内部写一个Sync 类继承 AbstractQueuedSynchronizer
  *          3. 独占重写 tryAcquire()和tryRelease()函数
- *             非独占重写 tryAcquireShared()和tryReleaseShared()函数
+ *          4. 非独占重写 tryAcquireShared()和tryReleaseShared()函数
  * @author yufeng
  * @create 2020-04-02
  */
@@ -25,7 +25,6 @@ public class OneShotLatch {
         sync.acquireShared(0);
     }
 
-
     private class Sync extends AbstractQueuedSynchronizer {
 
         @Override
@@ -33,14 +32,12 @@ public class OneShotLatch {
             return (getState() == 1) ? 1 : -1;
         }
 
-
         @Override
         protected boolean tryReleaseShared(int arg) {
             setState(1);
             return true;
         }
     }
-
 
     public static void main(String[] args) {
         OneShotLatch oneShotLatch = new OneShotLatch();
@@ -57,7 +54,6 @@ public class OneShotLatch {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         oneShotLatch.signal();
     }
 

@@ -14,7 +14,7 @@ public class UnsafeSequence {
     private int value;
 
     public int getNext() {
-        return value++;         // race condition: read-modify-write
+        return value ++;         // race condition: read-modify-write
     }
 
     public static void main(String[] args) {

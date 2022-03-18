@@ -28,7 +28,6 @@ public class CopyOnWriteArrayListDemo2 {
         itr2.forEachRemaining(System.out::println);
     }
 
-
     public static void main(String[] args) {
         iteratorTest1();
     }

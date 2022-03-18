@@ -23,7 +23,6 @@ public class CallableDemo implements Callable<Integer> {
         return sum;
     }
 
-
     public static void main(String[] args) {
         CallableDemo call = new CallableDemo();
         FutureTask<Integer> futureTask = new FutureTask<>(call);
