@@ -1,4 +1,4 @@
-package com.yufeng.extend.innerclass;
+package com.yufeng.extend.innerclass.part1;
 
 import org.junit.Test;
 
@@ -6,10 +6,9 @@ import org.junit.Test;
  * @description
  *      单元测试案例
  * @author yufeng
- * @create 2020-03-09
+ * @create 2020-03-08
  */
 public class InnerClassTest {
-
 
     /**
      * InnerDemo01修饰符定义为public, 外界可以通过
@@ -22,7 +21,6 @@ public class InnerClassTest {
         innerDemo01.show01();
 
     }
-
 
     /**
      * InnerDemo02修饰符定义为private, 则只能通过
@@ -37,7 +35,6 @@ public class InnerClassTest {
         outerDemo01.invokeInnerClassMethod();
     }
 
-
     /**
      * 局部内部类测试案例
      */
@@ -47,7 +44,6 @@ public class InnerClassTest {
         outerDemo02.methodOuter();
     }
 
-
     /**
      * 静态内部类
      */
@@ -56,7 +52,6 @@ public class InnerClassTest {
         OuterDemo03.InnerDemo04 innerDemo04 = new OuterDemo03.InnerDemo04();
         innerDemo04.innerMethod();
     }
-
 
     /**
      * 匿名内部类
@@ -78,7 +73,6 @@ public class InnerClassTest {
         obj.method1();
         obj.method2();
     }
-
 
     /**
      * 匿名内部类

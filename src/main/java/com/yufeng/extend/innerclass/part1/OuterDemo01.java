@@ -1,10 +1,10 @@
-package com.yufeng.extend.innerclass;
+package com.yufeng.extend.innerclass.part1;
 
 /**
  * @descrption
  *      成员内部类代码演示
  * @author yufeng
- * @create 2020-03-09
+ * @create 2020-03-08
  */
 public class OuterDemo01 {
 
@@ -14,7 +14,6 @@ public class OuterDemo01 {
 
     /** 重名字段 */
     private int age = 18;
-
 
     /**
      * 成员内部类——public修饰
@@ -33,7 +32,6 @@ public class OuterDemo01 {
         }
     }
 
-
     /**
      * 成员内部类——private修饰
      */
@@ -44,14 +42,12 @@ public class OuterDemo01 {
         }
     }
 
-
     public void invokeInnerClassMethod() {
 //        show();                               // 无法直接访问内部类方法
 //        InnerDemo02 innerDemo02 = new InnerDemo02();
         InnerDemo02 innerDemo02 = getInnerDemo02();
         innerDemo02.show02();
     }
-
 
     /**
      * 调用成员内部类————更加规范的写法
