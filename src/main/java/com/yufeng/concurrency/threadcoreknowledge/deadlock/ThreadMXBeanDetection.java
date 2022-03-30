@@ -46,7 +46,6 @@ public class ThreadMXBeanDetection implements Runnable {
         }
     }
 
-
     @Override
     public void run() {
         System.out.println("flag = " + flag);

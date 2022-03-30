@@ -18,7 +18,6 @@ public class DiningPhilosophers {
             this.rightChopstick = rightChopstick;
         }
 
-
         @Override
         public void run() {
             try {
@@ -38,13 +37,11 @@ public class DiningPhilosophers {
             }
         }
 
-
         private void doAction(String action) throws InterruptedException {
             System.out.println(Thread.currentThread().getName() + "_" + action);
             Thread.sleep((long) (Math.random() * 10));                              // 随机等待一定时间
         }
     }
-
 
     public static void main(String[] args) {
         Philosopher[] philosophers = new Philosopher[5];                    // 哲学家数量

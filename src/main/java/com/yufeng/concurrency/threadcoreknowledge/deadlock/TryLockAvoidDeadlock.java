@@ -29,7 +29,6 @@ public class TryLockAvoidDeadlock implements Runnable{
         new Thread(r2).start();
     }
 
-
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {             // 获取锁的次数100次

@@ -28,7 +28,6 @@ public class LiveLock {
         }
     }
 
-
     static class Diner {
         private String name;
         private boolean isHungry;
@@ -37,7 +36,6 @@ public class LiveLock {
             this.name = name;
             isHungry = true;
         }
-
 
         public void eatWith(Spoon spoon, Diner spouse) {
             while (isHungry) {
@@ -65,7 +63,6 @@ public class LiveLock {
             }
         }
     }
-
 
     public static void main(String[] args) {
         Diner husband = new Diner("牛郎");

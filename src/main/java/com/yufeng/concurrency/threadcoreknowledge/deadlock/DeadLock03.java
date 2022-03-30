@@ -16,7 +16,6 @@ public class DeadLock03 {
     private static final int NUM_ITERATIONS = 1000000;      // 转账次数
     private static final int NUM_THREADS = 20;              // 线程数
 
-
     public static void main(String[] args) {
         Random random = new Random();
         Account[] accounts = new Account[NUM_ACCOUNTS];

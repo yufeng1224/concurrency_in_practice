@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  *         4. T2睡眠结束后需要锁定O1才能继续执行, 而此时O1已被T1锁定
  *         5. T1、T2相互等待, 都需要对方锁定的资源才能继续执行, 从而死锁
  *         6. 退出信号: Process finished with exit code 130 (interrupted by signal 2: SIGINT)
- *            这是不正常退出的信号; 正常结束的程序信号时0;
+ *            这是不正常退出的信号, 正常结束的程序信号时0
  * @author yufeng
  * @create 2020-03-04
  */
@@ -21,7 +21,6 @@ public class DeadLock01 implements Runnable {
 
     static Object o1 = new Object();
     static Object o2 = new Object();
-
 
     @Override
     public void run() {
@@ -52,7 +51,6 @@ public class DeadLock01 implements Runnable {
             }
         }
     }
-
 
     public static void main(String[] args) {
         DeadLock01 r1 = new DeadLock01();

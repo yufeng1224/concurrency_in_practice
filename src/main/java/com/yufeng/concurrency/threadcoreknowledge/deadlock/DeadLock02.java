@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @description
  *      转账时遇到死锁的案例演示
+ *         1. 动态的锁顺序死锁
  * @author yufeng
  * @create 2020-03-04
  */
@@ -16,26 +17,6 @@ public class DeadLock02 implements Runnable {
     static Account a = new Account(500);
     static Account b = new Account(500);
 
-
-    public static void main(String[] args) throws Exception {
-        DeadLock02 r1 = new DeadLock02();
-        DeadLock02 r2 = new DeadLock02();
-        r1.flag = 1;
-        r2.flag = 0;
-
-        Thread t1 = new Thread(r1);
-        Thread t2 = new Thread(r2);
-
-        t1.start();
-        t2.start();
-        t1.join();
-        t2.join();
-
-        System.out.println("a的余额" + a.balance);
-        System.out.println("b的余额" + b.balance);
-    }
-
-
     @Override
     public void run() {
         if (flag == 1) {
@@ -46,7 +27,6 @@ public class DeadLock02 implements Runnable {
             transferMoneyFail(b, a, 200);
         }
     }
-
 
     /**
      * 失败的转账方法
@@ -71,7 +51,6 @@ public class DeadLock02 implements Runnable {
             }
         }
     }
-
 
     /**
      * 通过hash值来决定获取锁的顺序、冲突时需要"加时赛"
@@ -117,7 +96,6 @@ public class DeadLock02 implements Runnable {
             }
         }
     }
-
 
     static class Account {
         int balance;
