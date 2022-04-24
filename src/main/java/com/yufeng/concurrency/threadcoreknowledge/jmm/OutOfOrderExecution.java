@@ -35,7 +35,6 @@ public class OutOfOrderExecution {
             CountDownLatch latch = new CountDownLatch(1);
             Thread one = new Thread(() -> {
                 try {
-                    //System.out.println("Thread one await");
                     latch.await();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -44,7 +43,6 @@ public class OutOfOrderExecution {
                 a = 1;
                 x = b;
             });
-
 
             Thread two = new Thread(() -> {
                 try {

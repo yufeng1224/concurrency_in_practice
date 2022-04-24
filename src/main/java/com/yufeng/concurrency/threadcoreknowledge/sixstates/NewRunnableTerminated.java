@@ -31,7 +31,6 @@ public class NewRunnableTerminated implements Runnable {
         System.out.println(thread.getState());       /** 打印出TERMINATED状态 */
     }
 
-
     @Override
     public void run() {
         for (int i = 0; i < 1000; i ++) {

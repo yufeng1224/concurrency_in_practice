@@ -49,15 +49,12 @@ public class BlockedWaitingTimedWaiting implements Runnable {
          *  从RUNNABLE -> TIMED_WAITING状态
          */
         System.out.println("thread1的状态:" + thread1.getState());
-
     }
-
 
     @Override
     public void run() {
         syn();
     }
-
 
     private synchronized void syn() {
         System.out.println("当前执行的线程: " + Thread.currentThread().getName());

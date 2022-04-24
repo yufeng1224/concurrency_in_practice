@@ -3,7 +3,6 @@ package com.yufeng.concurrency.jcip.part3;
 import com.yufeng.concurrency.jcip.annotations.GuardedBy;
 import com.yufeng.concurrency.jcip.annotations.ThreadSafe;
 
-import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
