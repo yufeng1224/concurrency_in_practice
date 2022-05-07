@@ -2,9 +2,8 @@ package com.yufeng.concurrency.threadcoreknowledge.threadobjectclassmethods;
 
 /**
  * @descrption
- *      展示wait和notify的基本用法
- *          1. 研究代码执行顺序;
- *          2. 证明wait是释放锁的;
+ *      1. 展示wait和notify的基本用法
+ *      2. 研究代码执行顺序, 证明wait是释放锁的
  * @author yufeng
  * @create 2020-02-20
  */
@@ -30,7 +29,6 @@ public class Wait {
         }
     }
 
-
     /**
      * 从代码逻辑来看, Thread2 需要后执行
      */
@@ -50,7 +48,6 @@ public class Wait {
             }
         }
     }
-
 
     public static void main(String[] args) throws InterruptedException {
         Thread1 thread1 = new Thread1();

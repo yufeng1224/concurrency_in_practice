@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @descrption
- *      只释放当前monitor展示, 证明wait只释放当前的对象锁
+ *      多层synchronized嵌套, 则wait只释放当前的对象锁
  * @author yufeng
  * @create 2020-02-20
  */
@@ -13,7 +13,6 @@ public class WaitNotifyReleaseOwnMonitor {
     /** 创建两个对象锁 */
     private static volatile Object resourceA = new Object();
     private static volatile Object resourceB = new Object();
-
 
     public static void main(String[] args) {
         Thread thread1 = new Thread(() -> {
@@ -31,7 +30,6 @@ public class WaitNotifyReleaseOwnMonitor {
             }
         });
 
-
         Thread thread2 = new Thread(() -> {
             try {
                 TimeUnit.SECONDS.sleep(1);
@@ -46,7 +44,6 @@ public class WaitNotifyReleaseOwnMonitor {
                     System.out.println("ThreadB got resourceB lock.");
                 }
             }
-
         });
 
         thread1.start();

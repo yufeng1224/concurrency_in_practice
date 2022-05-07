@@ -4,21 +4,14 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @descrption
- *     1. notify, notifyAll方法演示, 并证明start先执行但不代表线程先启动;
- *     2. 创建3个线程, 线程1和线程2先后被阻塞, 线程3去唤醒以上2个线程;
- *
- * 知识点总结:
- *     1. notify() 是唤醒单个线程, 如果有多个线程, 那么程序始终无法终止;
- *     2. notifyAll() 是唤醒所有的线程;
- *     3. 调用 notify() 后, 当前线程还是会继续执行完毕, 然后再去执行其他的线程;
- *
+ *     1. notify, notifyAll方法演示: 证明调用start()顺序不代表线程真正启动顺序
+ *     2. 创建3个线程, 线程1和线程2先后被阻塞, 线程3去唤醒以上2个线程
  * @author yufeng
  * @create 2020-02-20
  */
 public class WaitNotifyAll implements Runnable {
 
     private static final Object resourceA = new Object();
-
 
     @Override
     public void run() {
@@ -35,7 +28,6 @@ public class WaitNotifyAll implements Runnable {
         }
     }
 
-
     public static void main(String[] args) throws InterruptedException {
         Runnable r = new WaitNotifyAll();
 
@@ -43,7 +35,7 @@ public class WaitNotifyAll implements Runnable {
         Thread threadB = new Thread(r);
         Thread threadC = new Thread(() -> {
             synchronized (resourceA) {
-                resourceA.notifyAll();              // 3个线程必须持有的是同一把锁, 否则唤醒不了
+                resourceA.notifyAll();              // 3个线程必须持有的是同一把锁(否则无法唤醒)
                 System.out.println("ThreadC notified.");
             }
         });
@@ -59,6 +51,6 @@ public class WaitNotifyAll implements Runnable {
 
         /** 观察所有被唤醒的线程的状态, 有一个会是BLOCKED状态, 有一个获得到锁执行SLEEP()方法变成TIMED_WAITING状态 */
         System.out.println("唤醒线程threadA的状态" + threadA.getState());
-        System.out.println("唤醒线程threadA的状态" + threadB.getState());
+        System.out.println("唤醒线程threadB的状态" + threadB.getState());
     }
 }

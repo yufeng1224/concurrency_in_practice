@@ -4,15 +4,13 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @descrption
- *      两个线程交替打印0 ~ 100的奇偶数, 使用wait和notify线程通信的方式
- *      这样效率更高，不会有浪费的操作
+ *      使用wait-notify通信交替打印奇偶数
  * @author yufeng
  * @create 2020-02-20
  */
 public class WaitNotifyPrintOddEveWait {
 
     private static int count = 0;
-
     private static int countOp = 0;
 
     private static final Object lock = new Object();
@@ -23,14 +21,13 @@ public class WaitNotifyPrintOddEveWait {
 
         new Thread(new TurningRunner(), "奇数").start();
 
-        TimeUnit.SECONDS.sleep(2);                             /** 保证主线程最后关闭 */
-        System.out.println("总共操作的次数, countOp=" + countOp);        /** 不会存在浪费的操作 */
+        TimeUnit.SECONDS.sleep(2);                            /** 保证主线程最后关闭 */
+        System.out.println("总共操作的次数, countOp=" + countOp);       /** 不会存在浪费的操作 */
     }
 
-
     /**
-     * 拿到锁，我们就打印
-     * 打印完，唤醒其他线程，自己就休眠
+     * 1. 拿到锁就打印
+     * 2. 打印完就唤醒其他线程, 然后自己休眠
      */
     static class TurningRunner implements Runnable {
 

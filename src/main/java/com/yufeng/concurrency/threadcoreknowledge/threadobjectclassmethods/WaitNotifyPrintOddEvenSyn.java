@@ -4,9 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @descrption
- *     两个线程交替打印 0~100 的奇偶数，用synchronized关键字实现
- *        1. 当奇数线程打印完奇数后, 两个线程竞争锁, 奇数线程可能会再次获得锁, 只不过这次进入方法后不再进行打印
- *        2. 这种实现方式存在很多的浪费操作(资源损耗)。
+ *     使用synchronized通信交替打印奇偶数
  * @author yufeng
  * @create 2020-02-20
  *
@@ -20,7 +18,9 @@ public class WaitNotifyPrintOddEvenSyn {
     private static int countOp = 1;
 
     /**
-     * 新建2个线程: 一个打印偶数, 一个打印奇数。 使用synchronized来通信
+     * 1. 两个线程交替打印 0~100 的奇偶数，用synchronized关键字实现通信
+     * 2. 当奇数线程打印完奇数后, 两个线程竞争锁, 奇数线程可能会再次获得锁, 只不过这次进入方法后不再进行打印
+     * 3. 这种实现方式存在很多的浪费操作(资源损耗)
      */
     public static void main(String[] args) {
         new Thread(() -> {
@@ -33,7 +33,6 @@ public class WaitNotifyPrintOddEvenSyn {
                 }
             }
         }, "偶数").start();
-
 
         new Thread(() -> {
             while (count < 100) {
