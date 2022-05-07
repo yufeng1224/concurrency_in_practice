@@ -4,9 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @description
- *      对象锁用法(一): 代码块形式, 手动指定锁对象
- *         1. 默认对象为当前实例对象
- *         2. 使用synchronized 关键字后，一次只能执行一个对象
+ *      1. 对象锁用法(一): 代码块形式, 手动指定锁对象
+ *      2. 默认对象为当前实例对象, 则使用synchronized 关键字后, 一次只能执行一个对象
  * @author yufeng
  * @create 2020-02-21
  */
@@ -28,7 +27,6 @@ public class SynchronizedObjectLock01 extends BaseMain implements Runnable {
             System.out.println(Thread.currentThread().getName() + "运行结束");
         }
     }
-
 
     public static void main(String[] args) {
         executeShow(instance);

@@ -4,8 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @description
- *      对象锁用法(一): 代码块形式, 手动指定锁对象
- *         1. 指定Object实例为锁对象
+ *      1. 对象锁用法(一): 代码块形式, 手动指定锁对象
+ *      2. 指定Object实例为锁对象
  * @author yufeng
  * @create 2020-02-21
  */
@@ -15,7 +15,6 @@ public class SynchronizedObjectLock02 extends BaseMain implements Runnable{
 
     Object lock1 = new Object();
     Object lock2 = new Object();
-
 
     /**
      * 方法中存在多个锁对象
@@ -44,7 +43,6 @@ public class SynchronizedObjectLock02 extends BaseMain implements Runnable{
             System.out.println(Thread.currentThread().getName() + "运行结束");
         }
     }
-
 
     public static void main(String[] args) {
         executeShow(instance);

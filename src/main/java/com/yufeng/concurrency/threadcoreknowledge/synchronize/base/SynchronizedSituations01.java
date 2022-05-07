@@ -4,9 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @description
- *      两个线程同时访问一个对象的同步方法情况演示
- *         1. 结论: 线程会串行执行该段代码, 能够保证并发安全
- *         2. 本质: 持有的是同一个对象锁
+ *      1. 两个线程同时访问一个对象的同步方法情况演示
+ *      2. 结论: 线程会串行执行该段代码, 能够保证并发安全; 本质: 持有的是同一个对象锁
  * @author yufeng
  * @create 2020-02-21
  */
@@ -29,9 +28,8 @@ public class SynchronizedSituations01 extends BaseMain implements Runnable {
         }
     }
 
-
     public static void main(String[] args) {
-        executeShow(instance, instance);
-    }       // 串行执行
+        executeShow(instance);                  // 串行执行
+    }
 
 }

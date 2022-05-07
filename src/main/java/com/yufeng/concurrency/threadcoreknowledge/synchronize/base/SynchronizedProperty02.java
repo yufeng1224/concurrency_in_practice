@@ -2,8 +2,7 @@ package com.yufeng.concurrency.threadcoreknowledge.synchronize.base;
 
 /**
  * @description
- *      Synchronized 可重入性质演示
- *          1. 调用不同的同步方法
+ *      Synchronized 可重入性质演示: 调用不同的同步方法
  * @author yufeng
  * @create 2020-02-21
  */
@@ -14,7 +13,7 @@ public class SynchronizedProperty02 {
         method2();
     }
 
-    private synchronized  void method2() {
+    private synchronized void method2() {
         System.out.println("我是method2");
     }
 

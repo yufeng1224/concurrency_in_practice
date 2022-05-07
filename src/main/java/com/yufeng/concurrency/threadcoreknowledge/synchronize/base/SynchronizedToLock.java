@@ -13,11 +13,9 @@ public class SynchronizedToLock {
 
     Lock lock = new ReentrantLock();
 
-
     private synchronized void method1() {
         System.out.println("synchronized形式同步代码块");
     }
-
 
     private void method2() {
         lock.lock();
@@ -27,7 +25,6 @@ public class SynchronizedToLock {
             lock.lock();
         }
     }
-
 
     public static void main(String[] args) {
         SynchronizedToLock s = new SynchronizedToLock();

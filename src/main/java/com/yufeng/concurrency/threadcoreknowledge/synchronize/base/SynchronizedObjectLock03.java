@@ -17,7 +17,6 @@ public class SynchronizedObjectLock03 extends BaseMain implements Runnable {
         method();
     }
 
-
     public synchronized void method() {
         System.out.println("对象锁的方法修饰符形式, 当前线程: " + Thread.currentThread().getName());
 
@@ -29,7 +28,6 @@ public class SynchronizedObjectLock03 extends BaseMain implements Runnable {
 
         System.out.println(Thread.currentThread().getName() + "运行结束");
     }
-
 
     public static void main(String[] args) {
         executeShow(instance);
