@@ -17,12 +17,10 @@ public class SleepDontReleaseMonitor implements Runnable {
         new Thread(monitor, "thread-1").start();
     }
 
-
     @Override
     public void run() {
         syn();
     }
-
 
     private synchronized void syn() {
         System.out.println("线程" + Thread.currentThread().getName() + "获取到了 monitor");

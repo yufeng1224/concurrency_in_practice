@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @create 2020-02-20
  */
 public class JoinInterrupt {
+
     public static void main(String[] args) {
         Thread mainThread = Thread.currentThread();
         Thread thread1 = new Thread(() -> {

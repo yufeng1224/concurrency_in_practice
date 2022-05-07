@@ -27,7 +27,6 @@ public class LockCantUseWait implements Runnable {
         new Thread(r2).start();
     }
 
-
     @Override
     public void run() {
         if (flag == 1) {

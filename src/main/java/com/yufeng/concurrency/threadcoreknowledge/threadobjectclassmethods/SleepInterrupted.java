@@ -5,8 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @description
- *      每隔1秒钟输出当前时间, 在第6~7秒的时候被中断。
- *      使用TimeUnit类, 更优雅的写法来设置线程等待
+ *      1. 调用sleep()进入阻塞的线程可以被打断
+ *      2. 每隔1秒钟输出当前时间, 在第6~7秒的时候被中断
  * @author yufeng
  * @create 2020-02-20
  */
@@ -19,7 +19,6 @@ public class SleepInterrupted implements Runnable {
         thread.interrupt();
     }
 
-
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
@@ -27,6 +26,7 @@ public class SleepInterrupted implements Runnable {
             try {
                 //TimeUnit.HOURS.sleep(3);                  // 3个小时
                 //TimeUnit.MINUTES.sleep(25);               // 25分
+                /** 使用TimeUnit类, 更优雅的写法来设置线程等待 */
                 TimeUnit.SECONDS.sleep(1);           // 每隔1秒钟
             } catch (InterruptedException e) {
                 System.out.println("我被中断了！");

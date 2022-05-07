@@ -30,7 +30,6 @@ public class SleepDontReleaseLock implements Runnable {
         }
     }
 
-
     public static void main(String[] args) {
         SleepDontReleaseLock sleepDontReleaseLock = new SleepDontReleaseLock();
         new Thread(sleepDontReleaseLock, "thread-0").start();

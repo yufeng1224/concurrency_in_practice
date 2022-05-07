@@ -4,9 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @description
- *      先join再看mainThread.getState(), 通过debugger看线程join前后状态的对比
- *          1. 代码方式看线程状态
- *          2. debug 方式看线程状态
+ *      1. 先join再看mainThread.getState(), 通过debugger看线程join前后状态的对比
+ *      2. 代码方式看线程状态
+ *      3. debug 方式看线程状态
  * @author yufeng
  * @create 2020-02-20
  */
