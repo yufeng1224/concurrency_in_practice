@@ -8,7 +8,9 @@ package com.yufeng.extend.interfaces.impl;
  */
 public abstract class DatabaseAbstract {
 
-    // 接口中的abstract可以省略, 但是抽象类中不允许省略
+    /**
+     * 接口中的abstract可以省略, 但是抽象类中不允许省略
+     */
     public abstract boolean getDatabaseConnection();
 
 }

@@ -9,6 +9,6 @@ package com.yufeng.extend.interfaces;
  */
 public interface IService extends IMessage, IChannel {
 
-    public String service();
+    String service();
 
 }

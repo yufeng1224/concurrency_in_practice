@@ -9,9 +9,9 @@ import com.yufeng.extend.interfaces.IMessage;
  *      1. 演示子类实现多个接口、子类对象向上转型
  *      2. 演示接口与Object类的转换
  *      3. 小结
- *          3-1 接口是无法继承Object的, 所以接口绝对不是Object的子类;
- *          3-2 但是接口子类实例对象是Object的子类, 所以接口可以通过Object接收;
- *          3-3 Object类对象可以接收所有数据类型, 包括基本数据类型、类对象、接口对象、数组!
+ *          3-1 接口是无法继承Object的, 所以接口绝对不是Object的子类
+ *          3-2 但是接口子类实例对象是Object的子类, 所以接口可以通过Object接收
+ *          3-3 Object类对象可以接收所有数据类型, 包括基本数据类型、类对象、接口对象、数组
  * @author yufeng
  * @create 2020-02-16
  */

@@ -19,5 +19,5 @@ public interface IMessage {
 
     public static final String INFO = "www.yufeng.com";     // 全局常量
 
-    public abstract String getInfo();                       // 抽象方法
+    String getInfo();                       // 抽象方法
 }

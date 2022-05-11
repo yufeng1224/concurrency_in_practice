@@ -8,6 +8,6 @@ package com.yufeng.extend.interfaces;
  */
 public interface IChannel {
 
-    public abstract boolean connect();      // 定义抽象方法
+    boolean connect();      // 定义抽象方法
 
 }
