@@ -6,8 +6,7 @@ import java.util.TimerTask;
 /**
  * @description
  *      错误观点: 定时器也是一种新建线程的方式
- *      错误原因: TimerTask实现了Runnable接口, 所以本质上还是通过实现Runnable接口的方式
- *      创建线程。
+ *      错误原因: TimerTask实现了Runnable接口, 所以本质上还是通过实现Runnable接口的方式创建线程
  * @author yufeng
  * @create 2020-02-14
  */

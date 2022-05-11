@@ -4,8 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @description
- *      转账时遇到死锁的案例演示
- *         1. 动态的锁顺序死锁
+ *      转账时遇到死锁的案例演示: 动态的锁顺序死锁
  * @author yufeng
  * @create 2020-03-04
  */

@@ -5,9 +5,9 @@ import java.util.concurrent.FutureTask;
 
 /**
  * @description
- *      1. 类FutureTask实现了RunnableFuture接口;
- *      2. RunnableFuture接口继承了Runnable接口、Future接口;
- *      3. 所以本质上还是通过实现Runnable接口的方式创建线程;
+ *      1. 类FutureTask实现了RunnableFuture接口
+ *      2. RunnableFuture接口继承了Runnable接口、Future接口
+ *      3. 所以本质上还是通过实现Runnable接口的方式创建线程
  * @author yufeng
  * @create 2020-02-14
  */

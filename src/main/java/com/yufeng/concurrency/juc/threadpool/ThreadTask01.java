@@ -14,7 +14,6 @@ public class ThreadTask01 {
     }
 }
 
-
 class Task implements Runnable {
     @Override
     public void run() {

@@ -18,7 +18,6 @@ public class ThreadMXBeanDetection implements Runnable {
     static Object o1 = new Object();
     static Object o2 = new Object();
 
-
     public static void main(String[] args) throws InterruptedException {
         ThreadMXBeanDetection r1 = new ThreadMXBeanDetection();
         ThreadMXBeanDetection r2 = new ThreadMXBeanDetection();
