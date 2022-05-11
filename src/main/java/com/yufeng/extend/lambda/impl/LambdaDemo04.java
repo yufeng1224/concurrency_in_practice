@@ -35,7 +35,6 @@ public class LambdaDemo04 {
         consumer.accept(money);
     }
 
-
     /**
      * 供给型接口演示
      */
@@ -59,7 +58,6 @@ public class LambdaDemo04 {
         return list;
     }
 
-
     /**
      * 函数型接口
      */
@@ -75,7 +73,6 @@ public class LambdaDemo04 {
     public String strHandler(String string, Function<String, String> function) {
         return function.apply(string);
     }
-
 
     /**
      * 断言型接口

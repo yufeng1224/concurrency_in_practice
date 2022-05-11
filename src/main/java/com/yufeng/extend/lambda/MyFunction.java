@@ -9,6 +9,6 @@ package com.yufeng.extend.lambda;
 @FunctionalInterface
 public interface MyFunction {
 
-    public String getValue(String str);
+    String getValue(String str);
 
 }

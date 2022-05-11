@@ -35,11 +35,6 @@ import java.util.function.Consumer;
  *     5. Lambda表达式的参数列表的数据类型可以省略不写, 因为JVM编译器可以通过上下文推断出数据类型, 即"类型推断"
  *        (Integer x, Integer y) -> Integer.compare(x, y)
  *
- *
- * 上联: 左右遇一括号省
- * 下联: 左侧推断类型省
- * 横批: 能省则省
- *
  * 三、 Lambda表达式需要"函数式接口"的支持
  *     函数式接口: 接口中只有一个抽象方法的接口, 称为函数式接口。 可以使用注解@FunctionalInterface修饰
  *     可以检查是否是函数式接口
@@ -48,7 +43,6 @@ import java.util.function.Consumer;
  * @create 2020-02-15
  */
 public class LambdaDemo02 {
-
 
     /**
      * Lambda语法格式1: 无参数、无返回值
@@ -73,7 +67,6 @@ public class LambdaDemo02 {
         TimeUnit.SECONDS.sleep(1);
     }
 
-
     /**
      * Lambda语法格式2: 有一个参数、无返回值
      */
@@ -82,7 +75,6 @@ public class LambdaDemo02 {
         Consumer<String> consumer = x -> System.out.println(x);
         consumer.accept("用lambda表达式调用Consumer接口中的方法");
     }
-
 
     /**
      * Lambda语法格式3: 有两个参数, 并且有返回值
@@ -97,7 +89,6 @@ public class LambdaDemo02 {
         System.out.println(big);
     }
 
-
     /**
      * Lambda语法格式4: 有两个参数, 并且只有一个返回语句。(可以进行省略)
      */
@@ -105,7 +96,6 @@ public class LambdaDemo02 {
     public void test4(){
         Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
     }
-
 
     /**
      * 类型推断演示
@@ -121,9 +111,7 @@ public class LambdaDemo02 {
         show(new HashMap<>());
     }
 
-
     public void show(Map<String, Integer> map) {}
-
 
     /**
      * 练习: 对一个数进行运算
@@ -135,7 +123,6 @@ public class LambdaDemo02 {
 
         System.out.println(operation(200, y -> y + 200));
     }
-
 
     public Integer operation(Integer num, MyFun mf) {
         return mf.getValue(num);

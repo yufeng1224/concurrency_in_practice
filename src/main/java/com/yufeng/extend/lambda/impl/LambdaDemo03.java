@@ -26,7 +26,6 @@ public class LambdaDemo03 {
             new Employee(105, "田七", 48, 9999)
     );
 
-
     /**
      * Lambda练习1:
      *    调用Collection.sort()方法, 通过定制排序比较两个Employee(先按年龄比, 年龄相同按姓名比)
@@ -46,7 +45,6 @@ public class LambdaDemo03 {
         }
     }
 
-
     /**
      * Lambda练习2
      */
@@ -62,14 +60,12 @@ public class LambdaDemo03 {
         System.out.println(subStr);
     }
 
-
     /**
      * 字符串处理
      */
     public String strHandler(String str, MyFunction mf) {
         return mf.getValue(str);
     }
-
 
     /**
      * Lambda练习3
@@ -79,7 +75,6 @@ public class LambdaDemo03 {
         operate(100L, 200L, (x, y) -> x + y);
         operate(100L, 200l, (x, y) -> x * y);
     }
-
 
     /**
      * 两个long型数据进行处理

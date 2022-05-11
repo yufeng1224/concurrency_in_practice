@@ -23,7 +23,6 @@ public class LambdaDemo01 {
             new Employee(105, "田七", 48, 9999)
     );
 
-
     /** 常规的匿名内部类, 写法比容冗余 */
     @Test
     public void test1() {
@@ -36,14 +35,12 @@ public class LambdaDemo01 {
         TreeSet<Integer> ts = new TreeSet<>(comparator);
     }
 
-
     /** 使用lambda表达式精简代码 */
     @Test
     public void test2() {
         Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
         TreeSet<Integer> treeSet = new TreeSet<>(comparator);
     }
-
 
     /**
      * 需求1: 获取公司中员工年龄大于35的员工信息
@@ -58,7 +55,6 @@ public class LambdaDemo01 {
         return list;
     }
 
-
     /** 需求1单元测试案例 */
     @Test
     public void test3() {
@@ -68,7 +64,6 @@ public class LambdaDemo01 {
             System.out.println(e);
         }
     }
-
 
     /**
      * 需求2: 获取公司中员工工资大于5000的员工信息
@@ -83,7 +78,6 @@ public class LambdaDemo01 {
         return list;
     }
 
-
     /** 需求2单元测试案例 */
     @Test
     public void test4() {
@@ -93,7 +87,6 @@ public class LambdaDemo01 {
             System.out.println(e);
         }
     }
-
 
     /** 优化方式一: 策略设计模式 */
     public List<Employee> filterEmployee(List<Employee> emps, MyPredicate<Employee> mp) {
@@ -106,7 +99,6 @@ public class LambdaDemo01 {
         }
         return list;
     }
-
 
     /** 策略设计模式单元测试案例 */
     @Test
@@ -124,7 +116,6 @@ public class LambdaDemo01 {
         }
     }
 
-
     /** 优化方式二: 使用匿名内部类(在方式一上面进一步做优化)*/
     @Test
     public void test6() {
@@ -140,7 +131,6 @@ public class LambdaDemo01 {
         }
     }
 
-
     /** 优化方式三: 匿名内部类进一步转化为Lambda表达式 */
     @Test
     public void test7() {
@@ -152,7 +142,6 @@ public class LambdaDemo01 {
         List<Employee> list1 = filterEmployee(employees, employee -> employee.getAge() <= 35);
         list1.forEach(System.out::println);
     }
-
 
     /** 优化方式四: Lambda表达式进一步转换为Stream API **/
     @Test

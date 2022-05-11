@@ -9,6 +9,6 @@ package com.yufeng.extend.lambda;
 @FunctionalInterface
 public interface MyPredicate<T> {
 
-    public boolean test(T t);
+    boolean test(T t);
 
 }
