@@ -7,7 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @description
  *      对比两个迭代器
  * @author yufeng
- * @create 2020-03-19
+ * @create 2020-03-27
  */
 public class CopyOnWriteArrayListDemo2 {
 
@@ -18,6 +18,7 @@ public class CopyOnWriteArrayListDemo2 {
         CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>(new Integer[]{1, 2, 3});
         System.out.println(list);
         Iterator<Integer> itr1 = list.iterator();
+
         list.add(4);
         System.out.println(list);
         Iterator<Integer> itr2 = list.iterator();

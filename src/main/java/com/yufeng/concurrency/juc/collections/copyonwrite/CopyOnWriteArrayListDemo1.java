@@ -6,18 +6,20 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @description
- *      演示CopyOnWriteArrayList可以在迭代的过程中修改数组内容, 但是ArrayList不行(对比)
+ *      1. CopyOnWriteArrayList演示
+ *      2. 作用: 可以在迭代的过程中新增或删除数组内容, ArrayList则不行
  * @author yufeng
- * @create 2020-03-19
+ * @create 2020-03-27
  */
 public class CopyOnWriteArrayListDemo1 {
 
     /**
-     * 1. ArrayList无法在迭代的时候进行增删的操作, 否则会抛出异常
-     * 2. 抛出的异常是: java.util.ConcurrentModificationException
-     * 3. 原因: checkForComodification()进行了校验
+     * 1. ArrayList在迭代时不支持增删操作, 否则会抛出异常: java.util.ConcurrentModificationException
+     * 2. 原因: ArrayList 中的内部类进行了校验, 检测到 expectedModCount 和 modCount 不相等
+     * 3. modCount 会统计list的增删操作, 每次会+1, 而 expectedModCount 在循环开始时, 从 modCount 那边复制过来的,
+     *    因此如果在循环中进行了增删操作, 会使得两个值不等, 进而抛出异常
      */
-    public static void arrayListTest() {
+    public static void arrayListIteratorTest() {
         ArrayList<String> list = new ArrayList<>();
         list.add("1");
         list.add("2");
@@ -31,18 +33,19 @@ public class CopyOnWriteArrayListDemo1 {
             String next = iterator.next();
             System.out.println(next);
 
-            /** 删除操作, 下一次迭代报错抛异常 */
-//            if (next.equals("2")) {
-//                list.remove("5");
-//            }
-            /** 新增操作, 下一次迭代报错抛异常 */
-//            if (next.equals("3")) {
-//                list.add("3 found");
-//            }
+            /* 不支持删除操作, 下一次迭代报错抛异常 */
+            if (next.equals("2")) {
+                list.remove("5");
+            }
 
-            /** 支持修改操作 */
+            /* 不支持新增操作, 下一次迭代报错抛异常 */
+            if (next.equals("3")) {
+                list.add("3 found");
+            }
+
+            /* 支持修改操作 */
             if (next.equals("4")) {
-                list.set(4, "55");
+                list.set(4, "44");
             }
         }
     }
@@ -83,7 +86,7 @@ public class CopyOnWriteArrayListDemo1 {
     }
 
     public static void main(String[] args) {
-        arrayListTest();
+        //arrayListIteratorTest();
         CopyOnWriteArrayListTest();
     }
 }
