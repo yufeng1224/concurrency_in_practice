@@ -20,7 +20,6 @@ public class ConditionDemo2 {
     private Lock lock = new ReentrantLock();
 
     private Condition produce = lock.newCondition();
-
     private Condition consume = lock.newCondition();
 
     public static void main(String[] args) {
@@ -31,9 +30,8 @@ public class ConditionDemo2 {
         consumer.start();
     }
 
-
     /**
-     * 生产者
+     * 消费者
      */
     class Consumer extends Thread {
 
@@ -66,9 +64,8 @@ public class ConditionDemo2 {
         }
     }
 
-
     /**
-     * 消费者
+     * 生产者
      */
     class Producer extends Thread {
 
@@ -76,7 +73,6 @@ public class ConditionDemo2 {
         public void run() {
             produce();
         }
-
 
         private void produce() {
             while (true) {

@@ -31,7 +31,6 @@ public class ConditionDemo1 {
         }
     }
 
-
     public void method2() {
         lock.lock();
         try {
@@ -43,11 +42,11 @@ public class ConditionDemo1 {
         }
     }
 
-
     public static void main(String[] args) {
         ConditionDemo1 conditionDemo1 = new ConditionDemo1();
-        /** 写在这里主线程会直接卡死, 后面子线程将不再执行!  注意顺序 */
+        /** 注意顺序: 写在这里主线程会直接卡死, 后面子线程将不再执行 */
         // conditionDemo1.method1();
+
         new Thread(() -> {
             try {
                 TimeUnit.SECONDS.sleep(1);

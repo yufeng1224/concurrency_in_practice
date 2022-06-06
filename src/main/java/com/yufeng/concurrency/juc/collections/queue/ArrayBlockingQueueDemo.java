@@ -9,12 +9,11 @@ import java.util.concurrent.TimeUnit;
  *      1. ArrayBlockingQueue使用案例演示
  *      2. 需求: 有10个面试者, 一共只有1个面试官, 大厅里有3个位子供面试者休息, 每个人的面试时间是1秒, 模拟所有人面试的场景
  * @author yufeng
- * @create 2020-03-19
+ * @create 2020-03-27
  */
 public class ArrayBlockingQueueDemo {
 
     public static void main(String[] args) {
-
         ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<String>(3);
 
         Interviewer r1 = new Interviewer(queue);
@@ -59,7 +58,6 @@ class Consumer implements Runnable {
     BlockingQueue<String> queue;
 
     public Consumer(BlockingQueue queue) {
-
         this.queue = queue;
     }
 
