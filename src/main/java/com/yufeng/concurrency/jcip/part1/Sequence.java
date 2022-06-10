@@ -5,16 +5,17 @@ import com.yufeng.concurrency.jcip.annotations.ThreadSafe;
 
 /**
  * @description
- *      线程安全的数值序列生成器
+ *      1. 线程安全的数值序列生成器
+ *      2. 解决方式: 使用synchronize对共享变量的访问操作进行协同, 防止互相干扰
  * @author yufeng
- * @create 2020-04-10
+ * @create 2020-04-20
  */
 @ThreadSafe
 public class Sequence {
 
     @GuardedBy("this") private int nextValue;
 
-    public synchronized  int getNext() {
+    public synchronized int getNext() {
         return nextValue ++;
     }
 
