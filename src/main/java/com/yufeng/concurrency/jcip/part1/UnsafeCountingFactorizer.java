@@ -14,7 +14,7 @@ import java.math.BigInteger;
  *         3-1 读取-修改-写入(read-modify-write)
  *         3-2 先检查后执行(check-then-act)
  * @author yufeng
- * @create 2020-04-10
+ * @create 2020-04-21
  */
 @NotThreadSafe
 public class UnsafeCountingFactorizer extends GenericServlet implements Servlet {
@@ -25,7 +25,6 @@ public class UnsafeCountingFactorizer extends GenericServlet implements Servlet 
         return count;
     }
 
-
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) {
         BigInteger i = extractFromRequest(servletRequest);
         BigInteger[] factors = factor(i);
@@ -34,15 +33,12 @@ public class UnsafeCountingFactorizer extends GenericServlet implements Servlet 
         encodeIntoResponse(servletResponse, factors);
     }
 
-
     void encodeIntoResponse(ServletResponse res, BigInteger[] factors) {
     }
-
 
     BigInteger extractFromRequest(ServletRequest req) {
         return new BigInteger("7");
     }
-
 
     BigInteger[] factor(BigInteger i) {
         // Doesn't really factor

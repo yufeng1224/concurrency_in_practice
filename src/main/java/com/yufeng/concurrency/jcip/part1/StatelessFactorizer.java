@@ -14,7 +14,7 @@ import java.math.BigInteger;
  *           因为这两个线程并没有共享状态, 就好像它们都在访问不同的实例
  *        4. 线程访问无状态对象的行为并不会影响其他线程中操作的正确性, 因此无状态对象一定是线程安全的
  * @author yufeng
- * @create 2020-04-10
+ * @create 2020-04-21
  */
 @ThreadSafe
 public class StatelessFactorizer extends GenericServlet implements Servlet {
@@ -25,10 +25,8 @@ public class StatelessFactorizer extends GenericServlet implements Servlet {
         encodeIntoResponse(servletResponse, factors);
     }
 
-
     void encodeIntoResponse(ServletResponse response, BigInteger[] factors) {
     }
-
 
     BigInteger extractFromRequest(ServletRequest request) {
         return new BigInteger("7");

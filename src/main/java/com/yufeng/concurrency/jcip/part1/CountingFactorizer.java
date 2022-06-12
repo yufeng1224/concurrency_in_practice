@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *      1. 使用AtomicLong类型的变量来统计已处理请求的数量, 可以确保线程安全
  *      2. UnsafeCountingFactorizer类的改进版
  * @author yufeng
- * @create 2020-04-10
+ * @create 2020-04-21
  */
 public class CountingFactorizer extends GenericServlet implements Servlet {
 
@@ -26,14 +26,11 @@ public class CountingFactorizer extends GenericServlet implements Servlet {
         encodeIntoResponse(servletResponse, factors);
     }
 
-
     void encodeIntoResponse(ServletResponse res, BigInteger[] factors) {}
-
 
     BigInteger extractFromRequest(ServletRequest req) {
         return null;
     }
-
 
     BigInteger[] factor(BigInteger i) {
         return null;
