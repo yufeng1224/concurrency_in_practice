@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicReference;
  *      1. 该Servlet没有对计算结果进行原子性保证(非线程安全)
  *      2. 要保持状态的一致性, 就需要在单个原子操作中更新所有相关的状态变量
  * @author yufeng
- * @create 2020-04-10
+ * @create 2020-04-21
  */
 @NotThreadSafe
 public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
@@ -21,7 +21,6 @@ public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
 
     private final AtomicReference<BigInteger[]> lastFactors
             = new AtomicReference<BigInteger[]>();
-
 
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) {
         BigInteger i = extractFromRequest(servletRequest);
@@ -36,15 +35,12 @@ public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
         }
     }
 
-
     void encodeIntoResponse(ServletResponse servletResponse, BigInteger[] factors) {
     }
-
 
     BigInteger extractFromRequest(ServletRequest servletRequest) {
         return new BigInteger("7");
     }
-
 
     BigInteger[] factor(BigInteger i) {
         // Doesn't really factor
