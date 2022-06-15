@@ -1,4 +1,4 @@
-package com.yufeng.concurrency.jcip.part1;
+package com.yufeng.concurrency.jcip.part1.chapter02;
 
 import javax.servlet.*;
 import java.math.BigInteger;
