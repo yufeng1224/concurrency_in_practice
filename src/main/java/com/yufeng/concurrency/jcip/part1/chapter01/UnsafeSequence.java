@@ -1,4 +1,4 @@
-package com.yufeng.concurrency.jcip.part1;
+package com.yufeng.concurrency.jcip.part1.chapter01;
 
 import com.yufeng.concurrency.jcip.annotations.NotThreadSafe;
 
