@@ -2,8 +2,8 @@ package com.yufeng.concurrency.threadcoreknowledge.threadunsafe;
 
 /**
  * @description
- *      1. 第三种线程安全问题: 对象不正确的发布;
- *      2. 案例②: 对象初始化还未完成, 就被其他线程所见, 导致了对象逸出
+ *      1. 第三种线程安全问题: 对象不正确的发布
+ *      2. 对象初始化还未完成, 就被其他线程所见, 导致了对象逸出
  * @author yufeng
  * @create 2020-02-25
  */
@@ -20,11 +20,14 @@ public class MultiThreadsError05 {
     }
 }
 
-
 class Point {
 
     private final int x, y;
 
+    /**
+     * 对x赋值较快, 对y赋值有延迟
+     * 由于时间的影响, 导致point发布的结果不一致
+     */
     public Point(int x, int y) throws InterruptedException {
         this.x = x;
 
@@ -40,7 +43,6 @@ class Point {
         return x + "," + y;
     }
 }
-
 
 class PointMaker extends Thread {
 

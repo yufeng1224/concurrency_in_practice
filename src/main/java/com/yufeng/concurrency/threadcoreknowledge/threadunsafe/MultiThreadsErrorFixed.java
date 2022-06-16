@@ -13,7 +13,6 @@ public class MultiThreadsErrorFixed {
 
     private EventListener listener;
 
-
     /**
      * 构造方法用private保护起来
      */
@@ -26,16 +25,15 @@ public class MultiThreadsErrorFixed {
         count = 100;
     }
 
-
     /**
-     * 工厂方法
+     * 工厂方法: 完成整个初始化过程
      */
     public static MultiThreadsErrorFixed getInstance(MySource source) {
         MultiThreadsErrorFixed safeListener = new MultiThreadsErrorFixed(source);
+        // 再进行注册
         source.registerListener(safeListener.listener);
         return safeListener;
     }
-
 
     public static void main(String[] args) {
         MySource mySource = new MySource();

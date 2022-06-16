@@ -7,7 +7,7 @@ import java.util.Map;
  * @description
  *      1. 第三种线程安全问题: 对象不正确的发布;
  *      2. 案例①: 错误地发布了一个private对象(本意private对象是公共资源, 只能用作读, 不能做修改)
- *      3. 由于某个线程做了修改操作, 导致后面所有的线程查看的都是错误的数据!
+ *      3. 由于某个线程做了修改操作, 导致后面所有的线程查看的都是错误的数据
  * @author yufeng
  * @create 2020-02-25
  */
@@ -26,14 +26,12 @@ public class MultiThreadsError04 {
         states.put("7", "周日");
     }
 
-
     /**
      * 错误的发布方式
      */
     public Map<String, String> getStates() {
         return states;
     }
-
 
     /**
      * 正确的发布方式
@@ -43,7 +41,6 @@ public class MultiThreadsError04 {
     public Map<String, String> getStatesImproved() {
         return new HashMap<>(states);
     }
-
 
     public static void main(String[] args) {
         MultiThreadsError04 multiThreadsError04 = new MultiThreadsError04();

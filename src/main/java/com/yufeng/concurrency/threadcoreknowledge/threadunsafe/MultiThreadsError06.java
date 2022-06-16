@@ -3,7 +3,6 @@ package com.yufeng.concurrency.threadcoreknowledge.threadunsafe;
 /**
  * @description
  *      第三种线程安全问题: 对象不正确的发布
- *      案例③: 观察者模式下, 匿名内部类直接持有外部类的引用;
  * @author yufeng
  * @create 2020-02-25
  */
@@ -12,6 +11,7 @@ public class MultiThreadsError06 {
     int count;
 
     public MultiThreadsError06(MySource source) {
+        // 观察者模式下, 匿名内部类直接持有外部类的引用。隐式的逸出了
         source.registerListener( e -> System.out.println("\n我得到的数字是" + count));
 
         for (int i = 0; i < 10000; i++) {
@@ -19,7 +19,6 @@ public class MultiThreadsError06 {
         }
         count = 100;
     }
-
 
     public static void main(String[] args) {
         MySource mySource = new MySource();
@@ -34,7 +33,6 @@ public class MultiThreadsError06 {
         MultiThreadsError06 error06 = new MultiThreadsError06(mySource);
     }
 }
-
 
 interface Event {}
 

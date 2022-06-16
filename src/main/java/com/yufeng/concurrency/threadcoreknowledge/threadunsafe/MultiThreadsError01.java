@@ -22,9 +22,8 @@ public class MultiThreadsError01 implements Runnable {
         thread2.start();
         thread1.join();
         thread2.join();
-        System.out.println("表面上结果是" + instance.index);
+        System.out.println("表面上结果是: " + instance.index);
     }
-
 
     /**
      * index ++ 看上去是单个操作，实际上是3个步骤的复合操作(read-modify-write)

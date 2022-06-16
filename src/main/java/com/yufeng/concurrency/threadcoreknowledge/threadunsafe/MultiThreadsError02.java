@@ -34,11 +34,10 @@ public class MultiThreadsError02 implements Runnable {
         thread1.join();
         thread2.join();
 
-        System.out.println("并发操作下结果是" + instance.index);
-        System.out.println("真正运行的次数是" + trueCount);
-        System.out.println("错误运行的次数是" + wrongCount);
+        System.out.println("并发操作下结果是: " + instance.index);
+        System.out.println("真正运行的次数是: " + trueCount);
+        System.out.println("错误运行的次数是: " + wrongCount);
     }
-
 
     @Override
     public void run() {
@@ -68,7 +67,7 @@ public class MultiThreadsError02 implements Runnable {
             trueCount.incrementAndGet();
 
             synchronized (instance) {
-                if (marked[index] && marked[index - 1]) {
+                if (marked[index] && marked[index - 1]) {       // 可见性判断
                     System.out.println("发生错误,位置:" + index);
                     wrongCount.incrementAndGet();
                 }

@@ -14,15 +14,14 @@ public class MultiThreadsError03 implements Runnable {
     static Object lock2 = new Object();
 
     public static void main(String[] args) {
-        MultiThreadsError03 runnable1 = new MultiThreadsError03();
-        MultiThreadsError03 runnable2 = new MultiThreadsError03();
-        runnable1.flag = 1;
-        runnable2.flag = 0;
+        MultiThreadsError03 r1 = new MultiThreadsError03();
+        MultiThreadsError03 r2 = new MultiThreadsError03();
+        r1.flag = 1;
+        r2.flag = 0;
 
-        new Thread(runnable1).start();
-        new Thread(runnable2).start();
+        new Thread(r1).start();
+        new Thread(r2).start();
     }
-
 
     @Override
     public void run() {
