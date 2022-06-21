@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 /**
  * @description
  *      1. 更好的解决方案: 使用ThreadLocal, 每个线程内部创建一个独有的SimpleDateFormat对象
- *         既保证了线程安全，又高效利用了内存
+ *      2. 既保证了线程安全，又高效利用了内存
  * @author yufeng
  * @create 2020-03-15
  */
@@ -16,13 +16,11 @@ public class ThreadLocalNormalUsage06 {
 
     public static ExecutorService threadPool = Executors.newFixedThreadPool(10);
 
-
     public String date(int seconds) {
         Date date = new Date(1000 * seconds);
         SimpleDateFormat dateFormat = ThreadSafeFormatter.dateFormatThreadLocal.get();
         return dateFormat.format(date);
     }
-
 
     public static void main(String[] args) {
         for (int i = 0; i < 1000; i++) {
@@ -41,7 +39,7 @@ public class ThreadLocalNormalUsage06 {
 
 
 /**
- * 生产出线程安全的日期格式化工具
+ * 生成线程安全的日期格式化工具
  */
 class ThreadSafeFormatter extends AbstractThreadLocalNormal {
 
@@ -50,7 +48,6 @@ class ThreadSafeFormatter extends AbstractThreadLocalNormal {
      */
     public static ThreadLocal<SimpleDateFormat> dateFormatThreadLocal = ThreadLocal
             .withInitial(() -> new SimpleDateFormat(DEFAULT_DATE_FORMAT));
-
 
     /**
      * 写法二
@@ -62,7 +59,6 @@ class ThreadSafeFormatter extends AbstractThreadLocalNormal {
                     return new SimpleDateFormat(DEFAULT_DATE_FORMAT);
                 }
             };
-
 
     /**
      * 一个线程中可以写多个threadLocal对象

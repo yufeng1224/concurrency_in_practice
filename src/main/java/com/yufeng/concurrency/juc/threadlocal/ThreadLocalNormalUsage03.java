@@ -1,5 +1,7 @@
 package com.yufeng.concurrency.juc.threadlocal;
 
+import com.yufeng.concurrency.jcip.annotations.ThreadSafe;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -12,6 +14,7 @@ import java.util.concurrent.Executors;
  * @author yufeng
  * @create 2020-03-15
  */
+@ThreadSafe
 public class ThreadLocalNormalUsage03 extends AbstractThreadLocalNormal {
 
     public static ExecutorService threadPool = Executors.newFixedThreadPool(10);

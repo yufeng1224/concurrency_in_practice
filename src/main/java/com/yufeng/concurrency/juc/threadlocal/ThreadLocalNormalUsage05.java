@@ -1,5 +1,7 @@
 package com.yufeng.concurrency.juc.threadlocal;
 
+import com.yufeng.concurrency.jcip.annotations.ThreadSafe;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
@@ -12,6 +14,7 @@ import java.util.concurrent.Executors;
  * @author yufeng
  * @create 2020-03-15
  */
+@ThreadSafe
 public class ThreadLocalNormalUsage05 extends AbstractThreadLocalNormal {
 
     public static ExecutorService threadPool = Executors.newFixedThreadPool(10);
@@ -29,7 +32,6 @@ public class ThreadLocalNormalUsage05 extends AbstractThreadLocalNormal {
         }
         return s;
     }
-
 
     public static void main(String[] args)  {
         for (int i = 0; i < 100; i++) {

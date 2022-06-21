@@ -1,5 +1,9 @@
 package com.yufeng.concurrency.juc.threadlocal;
 
+import com.yufeng.concurrency.jcip.annotations.ThreadSafe;
+
+import java.util.concurrent.TimeUnit;
+
 /**
  * @description
  *      1. 进一步延伸: 循环创建10个线程打印日期
@@ -7,16 +11,17 @@ package com.yufeng.concurrency.juc.threadlocal;
  * @author yufeng
  * @create 2020-03-15
  */
+@ThreadSafe
 public class ThreadLocalNormalUsage02 extends AbstractThreadLocalNormal {
 
     public static void main(String[] args) throws InterruptedException {
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             int finalI = i;
             new Thread(() -> {
                 String date = new ThreadLocalNormalUsage02().date(finalI);
                 System.out.println(date);
             }).start();
-            Thread.sleep(100);
+            TimeUnit.SECONDS.sleep(1);
         }
     }
 

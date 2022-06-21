@@ -14,7 +14,6 @@ public class ThreadLocalNPE {
         longThreadLocal.set(Thread.currentThread().getId());
     }
 
-
     public long get() {
         return longThreadLocal.get();
     }
@@ -25,7 +24,6 @@ public class ThreadLocalNPE {
     public Long getLong() {
         return longThreadLocal.get();
     }
-
 
     public static void main(String[] args) {
         ThreadLocalNPE threadLocalNPE = new ThreadLocalNPE();

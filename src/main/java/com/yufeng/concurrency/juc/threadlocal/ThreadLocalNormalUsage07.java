@@ -22,7 +22,6 @@ class Service1 {
     }
 }
 
-
 class Service2 {
     public void process() {
         User user = UserContextHolder.holder.get();
@@ -32,7 +31,6 @@ class Service2 {
         new Service3().process();
     }
 }
-
 
 class Service3 {
     public void process() {
@@ -44,14 +42,12 @@ class Service3 {
     }
 }
 
-
 /**
  * holder: 在编程中通常代表持有某些对象, 其他类可以从此处获取所需
  */
 class UserContextHolder {
     public static ThreadLocal<User> holder = new ThreadLocal<>();
 }
-
 
 class User {
     String name;
