@@ -39,7 +39,6 @@ public class WrongWayVolatileCantStop {
     }
 }
 
-
 /**
  * 生产者线程
  */
@@ -52,7 +51,6 @@ class Producer implements Runnable {
     public Producer(BlockingQueue storage) {
         this.storage = storage;
     }
-
 
     @Override
     public void run() {
@@ -75,7 +73,6 @@ class Producer implements Runnable {
         }
     }
 }
-
 
 /**
  * 消费者

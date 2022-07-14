@@ -1,5 +1,7 @@
 package com.yufeng.concurrency.threadcoreknowledge.stopthread;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @description
  *     1. 当线程进入阻塞过程中, 能够响应中断。
@@ -23,7 +25,7 @@ public class StopThreadWithSleep implements Runnable{
                 num ++;
             }
 
-            Thread.sleep(2000);
+            TimeUnit.SECONDS.sleep(2);
             System.out.println("线程处于TIMED_WAITING状态, 观察程序响应中断后是否会执行当前这行");         // 程序不会继续执行到这行
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -32,7 +34,6 @@ public class StopThreadWithSleep implements Runnable{
             System.out.println("当前线程的中断状态: " + Thread.currentThread().isInterrupted());     // false
         }
     }
-
 
     public static void main(String[] args)throws InterruptedException {
         Thread thread =  new Thread(new StopThreadWithSleep());

@@ -29,7 +29,6 @@ public class StopThread implements Runnable {
         }
     }
 
-
     public static void main(String[] args) {
         Thread thread = new Thread(new StopThread());
         thread.start();

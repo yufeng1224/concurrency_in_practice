@@ -23,7 +23,6 @@ public class RightWayStopThreadInProd2 implements Runnable {
         }
     }
 
-
     /**
      * catch语句块中恢复中断状态
      */
@@ -35,7 +34,6 @@ public class RightWayStopThreadInProd2 implements Runnable {
             e.printStackTrace();
         }
     }
-
 
     public static void main(String[] args) throws InterruptedException{
         Thread thread = new Thread(new RightWayStopThreadInProd2());

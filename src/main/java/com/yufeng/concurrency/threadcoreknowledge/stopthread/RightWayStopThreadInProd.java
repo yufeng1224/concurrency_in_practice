@@ -10,7 +10,6 @@ package com.yufeng.concurrency.threadcoreknowledge.stopthread;
  */
 public class RightWayStopThreadInProd implements Runnable {
 
-
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
@@ -26,7 +25,6 @@ public class RightWayStopThreadInProd implements Runnable {
             }
         }
     }
-
 
     /**
      * 正确方式: 底层方法传递中断, 不对中断进行处理。 抛出到顶层方法run中做处理

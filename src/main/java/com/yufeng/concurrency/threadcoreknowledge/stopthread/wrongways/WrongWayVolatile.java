@@ -28,7 +28,6 @@ public class WrongWayVolatile implements Runnable {
         }
     }
 
-
     public static void main(String[] args) throws InterruptedException{
         WrongWayVolatile r = new WrongWayVolatile();
         Thread thread = new Thread(r);

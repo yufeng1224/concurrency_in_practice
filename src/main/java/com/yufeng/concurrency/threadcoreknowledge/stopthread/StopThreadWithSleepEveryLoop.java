@@ -1,5 +1,7 @@
 package com.yufeng.concurrency.threadcoreknowledge.stopthread;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @description
  *      1. 目标线程每次迭代都会调用sleep()或wait()等方法进入阻塞状态,
@@ -28,10 +30,10 @@ public class StopThreadWithSleepEveryLoop implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Thread thread =  new Thread(new StopThreadWithSleepEveryLoop());
+        Thread thread = new Thread(new StopThreadWithSleepEveryLoop());
         thread.start();
 
-        Thread.sleep(5000);
+        TimeUnit.SECONDS.sleep(5);
         thread.interrupt();
     }
 }

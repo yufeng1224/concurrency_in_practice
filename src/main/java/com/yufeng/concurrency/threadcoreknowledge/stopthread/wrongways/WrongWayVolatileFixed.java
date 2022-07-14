@@ -30,7 +30,6 @@ public class WrongWayVolatileFixed {
         producerThread.interrupt();
     }
 
-
     class Producer implements Runnable {
 
         BlockingQueue storage;
@@ -38,7 +37,6 @@ public class WrongWayVolatileFixed {
         public Producer(BlockingQueue storage) {
             this.storage = storage;
         }
-
 
         @Override
         public void run() {
