@@ -22,7 +22,6 @@ public class ProducerConsumerModel {
     }
 }
 
-
 /**
  * 生产者线程
  */
@@ -42,7 +41,6 @@ class Producer implements Runnable {
     }
 }
 
-
 /**
  * 消费者线程
  */
@@ -61,7 +59,6 @@ class Consumer implements Runnable {
         }
     }
 }
-
 
 class EventStorage {
 

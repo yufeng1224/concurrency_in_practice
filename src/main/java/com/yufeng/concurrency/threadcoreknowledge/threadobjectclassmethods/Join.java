@@ -21,7 +21,6 @@ public class Join {
             System.out.println(Thread.currentThread().getName() + "执行完毕");
         }, "t1");
 
-
         Thread thread2 = new Thread(() -> {
             try {
                 TimeUnit.SECONDS.sleep(5);
